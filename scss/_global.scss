@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bb-black {
+  border-bottom: 1px solid black;
+}
+
+.wrapper {
+  max-width: 1170px;
+  padding: 0 15px;
+
+  margin: 0 auto;
+}
+
+.required {
+  &:after {
+    content: "*";
+    color: red;
+    padding-left: 3px;
+  }
+}
+
+.current-link {
+  color: #e3911b !important;
+}
+
+.main {
+  min-height: 2000px;
+}
+
+:focus-visible {
+  outline: none;
+}

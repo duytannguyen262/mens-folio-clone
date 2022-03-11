@@ -1,0 +1,298 @@
+.header {
+  &-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & a {
+      background-image: url("https://www.mens-folio.com/wp-content/themes/mensfolio2022/dist/images/mf-logo-black.png");
+      width: 490px;
+      height: 130px;
+
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.nav {
+  &-division {
+    background-color: black;
+    position: relative;
+
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  &-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 11px 0;
+
+    & li:not(:last-child) {
+      & a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+          color: #e3911b;
+        }
+      }
+    }
+
+    &_mega {
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid black;
+      box-shadow: 0px 0px 2px 1px #000000;
+      min-width: 200px;
+
+      margin-top: 5px;
+      padding: 10px 15px;
+
+      opacity: 0;
+      visibility: hidden;
+      z-index: 11;
+    }
+  }
+
+  &-link {
+    position: relative;
+
+    &_mega {
+      & a {
+        color: black !important;
+        cursor: pointer;
+        white-space: nowrap;
+        margin-bottom: 10px;
+
+        &:hover {
+          color: #013770;
+        }
+      }
+    }
+
+    &:hover .nav-links_mega {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 11px;
+    right: 11px;
+
+    color: white;
+
+    &_regions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+    }
+
+    &_search {
+      & img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.purchase {
+  & a {
+    color: black;
+    &:hover {
+      color: #e3911b !important;
+    }
+  }
+  background-color: #fff;
+}
+
+.has-submenu {
+  position: relative;
+
+  &:hover .nav-links_mega {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+header.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+
+  & .header-logo {
+    position: absolute;
+    padding-left: 12px;
+
+    & a {
+      width: 200px;
+      height: 50px;
+      background-image: url("https://www.mens-folio.com/wp-content/themes/mensfolio2020/dist/images/mens-folio-logo-white.png");
+
+      top: 0px;
+      left: 0px;
+
+      z-index: 2;
+    }
+  }
+
+  & .nav {
+    &-division {
+      width: 100vw;
+      height: 100px;
+    }
+    &-right {
+      padding-right: 12px;
+      top: 32px;
+    }
+  }
+}
+
+//responsive
+.mobile-header {
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 1180px) {
+  .desktop-header {
+    display: none;
+  }
+  .mobile-header {
+    display: block;
+    padding: 20px;
+
+    width: 100%;
+  }
+
+  .mobile {
+    &-nav_first-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid black;
+
+      padding: 10px;
+    }
+
+    &-nav_second-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+    }
+
+    &-logo {
+      & img {
+        width: 150px;
+        height: 40px;
+      }
+    }
+  }
+
+  .burger-btn {
+    background-color: #fff;
+    border: 2px solid black;
+    padding: 0;
+  }
+
+  .burger-inner_item {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 20px;
+
+    & a {
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        color: #e3911b;
+      }
+    }
+
+    &.purchase {
+      background-color: #f5f5f5;
+    }
+  }
+
+  .accordion {
+    &-button {
+      justify-content: center;
+      flex-direction: column;
+
+      &:not(.collapsed) {
+        color: #e3911b;
+        background-color: #eaeaea;
+      }
+
+      &:focus {
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      &::after {
+        position: absolute;
+        right: 10px;
+        background-image: url("https://www.mens-folio.com/wp-content/themes/mensfolio2022/dist/images/menu-arrow-down.png");
+      }
+
+      &:not(.collapsed)::after {
+        background-image: url("https://www.mens-folio.com/wp-content/themes/mensfolio2022/dist/images/menu-arrow-down.png");
+        transform: rotate(90deg);
+      }
+    }
+
+    &-item {
+      border: none;
+    }
+  }
+
+  .burger-accordion_inner {
+    padding: 10px;
+
+    &--item {
+      text-align: center;
+      padding: 10px;
+
+      & a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #000000;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .region {
+    &-btn {
+      background-color: rgba(92, 99, 106, 0.4) !important;
+      border: none !important;
+    }
+
+    &-flag {
+      width: 35px;
+      height: 26px;
+    }
+  }
+
+  .dropdown-menu {
+    min-width: 0 !important;
+  }
+}
